@@ -89,3 +89,8 @@ func (s *AuthServiceImpl) GetUserByID(id uint) (*entities.User, error) {
 func (s *AuthServiceImpl) UpdateUser(user *entities.User) error {
 	return s.userRepo.Update(user)
 }
+
+func (s *AuthServiceImpl) GetAllUsers() ([]entities.User, error) {
+	return s.userRepo.GetAll()
+}
+
