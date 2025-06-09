@@ -58,6 +58,13 @@ func main() {
 			})
 		},
 	})
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "*", // <- เปลี่ยนจาก []string{"*"} เป็น "*"
+		AllowMethods:     "*",
+		AllowHeaders:     "*",
+		ExposeHeaders:    "*",
+		AllowCredentials: true,
+	}))
 
 	// Middleware
 	app.Use(logger.New())
